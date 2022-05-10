@@ -1,0 +1,83 @@
+<div class="text-layout">
+  <h1>Pipes poco comunes</h1>
+  <p>Pipes incluidos en Angular</p>
+</div>
+
+<div class="grid">
+  <div class="col-6">
+    <p-card>
+      <p>
+        <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+          Saludos {{ nombre }},
+          {{ genero | i18nSelect: mapa }}
+          invitamos a aprender pipes de Angular
+        </p-fieldset>
+      </p>
+      <p-button label="Cambiar persona" (click)="cambiarPersona()"></p-button>
+    </p-card>
+  </div>
+  <div class="col-6">
+    <p-card>
+      <p>
+        <p-fieldset legend="i18nPrural Pipe" [toggleable]="true">
+          Actualmente
+          {{ personas.length | i18nPlural: mapaPersona }}
+        </p-fieldset>
+      </p>
+      <p-button label="Borrar persona" (click)="borrarPersona()"></p-button>
+    </p-card>
+  </div>
+
+  <div class="col-6">
+    <p-card>
+      <p>
+        <p-fieldset legend="Slice Pipe" [toggleable]="true">
+          <b>Original</b>
+          <pre>{{ personas }}</pre>
+          <b>Slice:0</b>
+          <pre>{{ personas | slice: 0 }}</pre>
+          <b>Slice:1:2</b>
+          <pre>{{ personas | slice: 1:2 }}</pre>
+          <b>Slice:1:3</b>
+          <pre>{{ personas | slice: 1:3 }}</pre>
+        </p-fieldset>
+      </p>
+    </p-card>
+  </div>
+
+  <div class="col-6">
+    <p-card>
+      <p>
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+          <ul>
+            <li *ngFor="let item of persona | keyvalue">
+              <b>{{ item.key }}</b> : {{ item.value }}
+            </li>
+          </ul>
+        </p-fieldset>
+      </p>
+    </p-card>
+  </div>
+
+  <div class="col-6">
+    <p-card>
+      <p>
+        <p-fieldset legend="Json Pipe" [toggleable]="true">
+          <pre>{{ heroes | json }}</pre>
+        </p-fieldset>
+      </p>
+    </p-card>
+  </div>
+
+  <div class="col-6">
+    <p-card>
+      <p>
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+          <pre>{{ miObservable | async }}</pre>
+          <pre *ngIf="!(promesa | async)">Resolviendo promesa...</pre>
+          <pre>{{ promesa | async }}</pre>
+        </p-fieldset>
+      </p>
+    </p-card>
+  </div>
+</div>

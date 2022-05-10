@@ -1,0 +1,18 @@
+<div class="text-layout">
+  <h1>Pipes numeros y porcentaje</h1>
+  <p>Pipes incluidos en Angular</p>
+</div>
+
+<div class="grid">
+  <div class="col-4">
+    <p-card header="Numero con icono"
+      ><i class="pi pi-dollar"> </i>{{ numero | number: "1.2-3" }}</p-card
+    >
+  </div>
+  <div class="col-4">
+    <p-card header="Numero con pipe">{{ numero | currency: "COP" }}</p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="Porcentaje">{{ porcentaje | percent: "2.1-2" }}</p-card>
+  </div>
+</div>
